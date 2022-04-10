@@ -1,0 +1,18 @@
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/x-javascript
+	AddOutputFilterByType DEFLATE text/css
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+# RewriteCond %{HTTPS} off
+
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^([0-9]+)/?$ index.php?cari=$1
+
+</IfModule>
+
